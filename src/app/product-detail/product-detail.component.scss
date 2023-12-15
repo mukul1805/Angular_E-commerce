@@ -1,0 +1,20 @@
+.container {
+    outline: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px grey;
+}
+
+.upper-left {
+    display: flex;
+    margin-left: 20px;
+}
+
+.upper-right {
+    margin: 10px;
+}
+
+
+.cardImg {
+    height: 300px;
+    width: 400px
+}
