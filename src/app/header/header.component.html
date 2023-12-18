@@ -1,10 +1,19 @@
-<div class="headerStyle">
+<!-- <div class="headerStyle">
     <ul class="insideHeader">
-        <li><a href="/home">Home </a></li>
+        <li>Home</li>
         <li><a href="/products">Product</a></li>
         <li>About Us</li>
         <li>Contact</li>
         <li>Login</li>
+    </ul>
+<hr/>
+</div> -->
+
+
+
+<div class="headerStyle">
+    <ul *ngFor="let item of headerList"   class="insideHeader" >
+        <li><a  href="/{{item}}">{{item}}</a></li>
     </ul>
 <hr/>
 </div>

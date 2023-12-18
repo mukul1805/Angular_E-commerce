@@ -9,9 +9,9 @@ import { FetchDataService } from '../fetch-data.service';
 export class ProductsComponent implements OnInit {
   dataList: any
 
-  constructor(private dataService: FetchDataService){ }
-  
-  ngOnInit(){
+  constructor(private dataService: FetchDataService) { }
+
+  ngOnInit() {                                             //to call just after the initialisation of the component
     this.fetchData();
   }
 

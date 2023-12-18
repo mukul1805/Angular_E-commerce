@@ -1,15 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';                                         //inject a service into a component to give that component access to the service
+import { HttpClient } from '@angular/common/http'                 
+import { Observable } from 'rxjs';                                                  //handling async oper. (click)
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class FetchDataService {
-
   data: any
-
   private apiUrl= 'https://fakestoreapi.com/products';
 
   constructor( private http: HttpClient) { }
@@ -19,7 +17,6 @@ export class FetchDataService {
   //   console.log('works')
   //   console.log(this.data)
   //    return this.http.get(this.apiUrl);
-
   // }
 
   // getData() {
@@ -30,7 +27,6 @@ export class FetchDataService {
   //   })
   // }
 
-  
   getData(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
