@@ -1,12 +1,12 @@
-<div class="row row-cols-3 row-cols-md-4 g-4" >
-        <div class="col" *ngFor="let data of dataList;">
-            <div class="card" style="width: 21rem;">
-                <img src={{data.image}} class="card-img-top" style="height: 300px;" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" style="height: 140px;"> {{data.title}}</h5>
-                    <p class="card-text" style="height: 10px;">₹{{data.price}}</p>
-                    <!-- <a href="/{{data.id}}" class="btn btn-primary" > Buy Now</a> -->
-                    <a [routerLink]="['/Products', data.id]" class="btn btn-primary" >Product Detail</a>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
+    <div class="col" *ngFor="let data of dataList;">
+        <div class="card" style="width: 90%;">
+            <img src={{data.image}} class="card-img-top" style="height: 300px;" alt="...">
+            <div class="card-body">
+                <h4 class="card-title" > {{data.title}}</h4>
+                <h6 class="card-text" style="height: 10px; margin: 20px 0px 20px 0px;">₹{{data.price}}</h6>
+                <a [routerLink]="['/Products', data.id]" class="btn btn-primary">More Details</a>
             </div>
         </div>
     </div>
+</div> 
