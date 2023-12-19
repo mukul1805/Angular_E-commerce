@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router'
 export class ProductDetailComponent {
 
   dataList: any;
-  productId!: number;         //
+  productId!: number;         
+  loading: boolean = true;
+
 
   constructor(private dataService: FetchDataService, private route: ActivatedRoute) { }
 
@@ -21,8 +23,6 @@ export class ProductDetailComponent {
     });
   }
 
-
-
   fetchData() {
     this.dataService.getData().subscribe((result) => {
       this.dataList = result;                                       // getting all product
@@ -31,10 +31,10 @@ export class ProductDetailComponent {
       if (product) {
         this.dataList = [product];                                  //storing only the particular product
         console.log("products-detail", this.dataList);
+        this.loading= false;
       } else {
         console.error(`Product with ID ${this.productId} not found.`)
       }
     });
   }
-
 }
