@@ -3,10 +3,10 @@
         <div class="card" style="width: 90%;">
             <img src={{data.image}} class="card-img-top" style="height: 300px;" alt="...">
             <div class="card-body">
-                <h4 class="card-title" > {{data.title}}</h4>
+                <h4 class="card-title" placement="bottom" ngbTooltip="{{data.title}}">{{data.title}}</h4>
                 <h6 class="card-text" style="height: 10px; margin: 20px 0px 20px 0px;">₹{{data.price}}</h6>
                 <a [routerLink]="['/Products', data.id]" class="btn btn-primary">More Details</a>
             </div>
         </div>
     </div>
-</div> 
+</div>

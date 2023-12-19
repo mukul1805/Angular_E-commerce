@@ -11,15 +11,19 @@ export class ProductsComponent implements OnInit {
 
   constructor(private dataService: FetchDataService) { }
 
-  ngOnInit() {                                             //to call just after the initialisation of the component
+  ngOnInit() {          //to call just after the initialisation of the component
     this.fetchData();
   }
 
   fetchData() {
-    this.dataService.getData().subscribe((result) => {
-      this.dataList = result;
-      console.log("products", this.dataList);
-    });
+    this.dataService.getData().subscribe(
+      (result) => {
+        this.dataList = result;
+        console.log("products", this.dataList);
+      },
+      (error) => {
+        console.log("Something wrong..!",error)
+      }
+    );
   }
-
 }
