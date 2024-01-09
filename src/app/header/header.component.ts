@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  headerList:string[]= ['Home', 'Products', 'Cart', 'About', 'Contact'];
-
 }
