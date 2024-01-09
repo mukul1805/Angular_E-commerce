@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchDataService } from '../fetch-data.service';
-import { ActivatedRoute } from '@angular/router'
+import { FetchDataService } from '../../fetch-data.service';
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -17,7 +19,7 @@ export class ProductDetailComponent {
 
   ngOnInit() {                                   // Activated route is used to get info about current route
     // Get the product ID from the URL
-    this.route.params.subscribe(params => {     // params contain routre parameter
+    this.route.params.subscribe(params => {     // params contain router parameter
       this.productId = +params['id'];           // '+' to convert the parameter to a number
       this.fetchData();
     });

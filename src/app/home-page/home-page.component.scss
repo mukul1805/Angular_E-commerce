@@ -1,0 +1,28 @@
+// .home-container {
+//     background-color: lightskyblue;
+//     width: 100%;
+//     height: 100vmin;
+// }
+
+// h1.home-container {
+//     text-align: center;
+//     justify-content: center;
+//     justify-self: center;
+//     align-items: center;
+//     align-self: center;
+//     display: flex;
+//     align-self: center;
+// }
+
+* {
+    background-color: lightskyblue;
+    width: 100%;
+    height: 100vmin;
+}
+
+h1 {
+    background-color: aliceblue;
+    justify-content: center;
+    padding-top: 20%;
+    display: flex;
+}

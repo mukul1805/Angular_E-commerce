@@ -1,0 +1,36 @@
+.containing {
+    outline: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    margin: 20px;
+    display: flex;
+    width: 97.5%;
+}
+
+.upper-left {
+    display: flex;
+    margin-left: 20px;
+}
+
+.upper-right {
+    margin: 20px 20px 20px 90px;
+
+}
+
+.cardImg {
+    height: 500px;
+    width: 400px;
+    margin: 20px;
+}
+
+.vertical {
+    border-left: 5px solid gainsboro;
+    margin-left: 2%;
+}
+
+.button-container {
+    display: grid;
+    height: 60px;
+    width: 150px;
+    margin-bottom: 20px;
+}

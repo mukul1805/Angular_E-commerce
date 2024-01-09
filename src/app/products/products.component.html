@@ -1,11 +1,47 @@
+<app-search></app-search>
+<app-filter [all]=totalProduct [inStock]=totalInStock [outStock]=totalOutStock
+    (selectedFilterRadioButtonChanged)="onFilterChange($event)">
+</app-filter>
+<!-- 
+
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
     <div class="col" *ngFor="let data of dataList;">
-        <div class="card" style="width: 90%;">
-            <img src={{data.image}} class="card-img-top" style="height: 300px;" alt="...">
-            <div class="card-body">
-                <h4 class="card-title" placement="bottom" ngbTooltip="{{data.title}}">{{data.title}}</h4>
-                <h6 class="card-text" style="height: 10px; margin: 20px 0px 20px 0px;">₹{{data.price}}</h6>
-                <a [routerLink]="['/Products', data.id]" class="btn btn-primary">More Details</a>
+        <div
+            *ngIf="selectedFilterRadioButton=== 'all' || data.instock.toString()===selectedFilterRadioButton || data.category === selectedFilterRadioButton">
+
+            <div class="card" style="width: 90%;">
+
+                <img src={{data.image}} class="card-img-top" style="height: 300px;" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title" placement="bottom" ngbTooltip="{{data.title}}">{{data.title}}</h4>
+                    <h6 class="card-text" style="height: 10px; margin: 20px 0px 20px 0px;">₹{{data.price}}</h6>
+                    <a [routerLink]="['/Products', data.id]" class="btn btn-primary">More Details</a>
+                    <div class="product-in-stock"
+                        [ngStyle]="{fontWeight  : 'bold', color: data.count>0 ? 'Green' : 'Red' }">
+                        {{ data.count>0 ? 'Available in Stock' : 'Out of Stock'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div style="display: flex; flex-wrap: wrap;" >
+    <div  *ngFor="let data of dataList;">
+        <div class="containers"
+            *ngIf="selectedFilterRadioButton=== 'all' || data.instock.toString()===selectedFilterRadioButton || data.category === selectedFilterRadioButton">
+
+            <div class="cards" >
+                <img src={{data.image}} class="images" style="height: 300px;" alt="...">
+                <div class="card-texts">
+                    <h4 class="card-title" placement="bottom" ngbTooltip="{{data.title}}">{{data.title}}</h4>
+                    <h6 class="card-texts" style="height: 10px; margin: 20px 0px 20px 0px;">₹{{data.price}}</h6>
+                    <a [routerLink]="['/Products', data.id]" class="btn btn-primary">More Details</a>
+                    <div class="product-in-stock"
+                        [ngStyle]="{fontWeight  : 'bold', color: data.count>0 ? 'Green' : 'Red' }">
+                        {{ data.count>0 ? 'Available in Stock' : 'Out of Stock'}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,26 @@
+<div *ngIf="!loading">
+  <div class="containing">
+    <div class="upper-left">
+      <img src={{dataList[0].image}} class="cardImg" alt="...">
+    </div>
+
+    <div class="vertical"></div>
+
+    <div class="upper-right">
+      <h2 class="cardTitle"> {{dataList[0].title | slice:0}}</h2> <!--slice is a pipe use to remove from front -->
+      <p>Rating: {{dataList[0].rate}}</p>
+      <!-- <star-rating [starType]="'svg'" [rating]=dataList[0].rate></star-rating> -->
+      <hr>
+      <h5>Price: ₹{{dataList[0].price}}</h5>
+      <p>Inclusive of all taxes</p>
+      <hr>
+      <p>Category: {{dataList[0].category}}</p>
+      <p>Description: {{dataList[0].description}}</p>
+      <p>Items Left: {{dataList[0].count}}</p>
+      <div class="button-container">
+        <button type="button" class="btn btn-warning" style="margin-bottom:10px;">Add to Cart</button>
+        <button type="button" class="btn btn-warning">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
